@@ -391,15 +391,18 @@ group:insert( image )
 local filterText = display.newText("Filter Name", 100, 350, font, 24)
 
 
-local function changeIntensity()
+local function changeParams()
 	if amount < effects[effectNumber].high and goingUp == true then
 	amount = amount + effects[effectNumber].increment
-		print(amount)
+		-- print(amount)
 	elseif amount >= effects[effectNumber].high then goingUp = false amount = (effects[effectNumber].high-0.01)
-	elseif amount < effects[effectNumber].low then goingUp = true amount = (effects[effectNumber].low+0.01) print('filter changed to '..effects[effectNumber].name) effectNumber = effectNumber +1 if effectNumber>#effects then effectNumber =1 end 
+	elseif amount < effects[effectNumber].low then goingUp = true amount = (effects[effectNumber].low+0.01)  
+		effectNumber = effectNumber +1 
+		if effectNumber>#effects then effectNumber =1 end 
+		print('filter changed to '..effects[effectNumber].name)
 	else
 	amount = amount - effects[effectNumber].increment
-	print(amount)
+	-- print(amount)
 	end
 	local filter = effects[effectNumber]
 	image.fill.effect = filter.name
@@ -407,4 +410,4 @@ local function changeIntensity()
 	filterText.x = halfW
 	setEffect( image.fill.effect, filter, amount )
 end
-Runtime:addEventListener("enterFrame", changeIntensity)
+Runtime:addEventListener("enterFrame", changeParams)
