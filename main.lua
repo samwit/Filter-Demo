@@ -1,15 +1,15 @@
 --
--- Abstract: Fishies sample app
+-- Abstract: New Filter Demo for Corona Graphics 2.0
 --
--- Date: September 10, 2010
+-- Date: August 10, 2013
 --
--- Version: 1.1
+-- Version: 0.1
 --
 -- File name: main.lua
 --
--- Author: Corona Labs
+-- Author: Corona Labs/Sam Witteveen
 --
--- Demonstrates: graphics, orientation, object touch
+-- Demonstrates: Various Filters from Corona Graphics 2.0
 --
 -- File dependencies: none
 --
@@ -29,6 +29,7 @@ local halfW = display.contentWidth * 0.5
 local halfH = display.contentHeight * 0.5
 
 local font = (platform ~= "Android") and "MarkerFelt-Wide" or system.nativeFont;
+
 -- Show entire list of effects
 -- local t = graphics.listEffects( "filter" )
 
@@ -385,7 +386,6 @@ image.x = 150
 image.y = 150
 group:insert( image )
 -- image:translate( x + w*(1), y + h*(1) )
-
 
 
 local filterText = display.newText("Filter Name", 100, 350, font, 24)
